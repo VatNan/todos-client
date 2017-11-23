@@ -1,5 +1,4 @@
 import gql from 'graphql-tag'
-// import 'graphql-tag'
 import { graphql } from 'react-apollo'
 import { rawQuery } from './query'
 
@@ -18,13 +17,9 @@ const addTodo = graphql(gql`
     }),
     options: {
       update: (proxy, { data: { addTodo } }) => {
-        const data = proxy.readQuery({ query: rawQuery })  
-        console.log('============================')
-        console.log('deleteTodo', addTodo)
-        console.log('data.todos', data.todos)     
+        const data = proxy.readQuery({ query: rawQuery })
         data.todos.push(addTodo)
-        console.log('data.todos new', data.todos)  
-        proxy.writeQuery({ query: rawQuery, data })    
+        proxy.writeQuery({ query: rawQuery, data })
       }
     }
   }

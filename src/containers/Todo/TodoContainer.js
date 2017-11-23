@@ -93,8 +93,6 @@ class TodoContainer extends Component {
   }
 
   render() {
-    // Test
-    console.log(this.props)
     return (
       <div className='root'>
         <h1 className='text-center'>
