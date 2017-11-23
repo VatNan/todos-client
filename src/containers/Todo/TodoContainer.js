@@ -111,3 +111,6 @@ export default compose(
   deleteTodo,
   toggleTodo
 )(TodoContainer)
+export {
+  TodoContainer
+}
